@@ -38,7 +38,7 @@ app.delete("/:id", async (request, response) => {
 });
 
 app.listen(8080, function () {
-  console.log("Server listening at http://localhost:8080");
+  console.log("Server listening at https://w7-server.onrender.com");
 });
 
 app.post("/categories", async (request, response) => {

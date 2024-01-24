@@ -24,7 +24,7 @@ export default function App() {
 
   async function handleGetMessages() {
     // make a fetch request to my api
-    const response = await fetch("http://localhost:8080");
+    const response = await fetch("https://w7-server.onrender.com");
     const data = await response.json();
 
     // get all the messages
@@ -32,14 +32,14 @@ export default function App() {
   }
   
   async function handleDelete(id) {
-    const response = await fetch(`http://localhost:8080/${id}`, { method: 'DELETE' });
+    const response = await fetch(`https://w7-server.onrender.com/${id}`, { method: 'DELETE' });
     const data = await response.json();
     console.log(data);
     handleGetMessages()
   }
 
   const fetchCategories = async () => {
-    const response = await fetch("http://localhost:8080/categories");
+    const response = await fetch("https://w7-server.onrender.com/categories");
     const data1 = await response.json();
     setCategories(data1);
   };
@@ -55,7 +55,7 @@ export default function App() {
     };
     console.log(formValues);
     try {
-      const response = await fetch("http://localhost:8080/", { 
+      const response = await fetch("https://w7-server.onrender.com/", { 
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(formValues)
@@ -92,7 +92,7 @@ export default function App() {
 const handleCategorySubmit = async (event) => {
     event.preventDefault();
     try {
-        const response = await fetch("http://localhost:8080/categories", {
+        const response = await fetch("https://w7-server.onrender.com/categories", {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ types: newCategoryName })
